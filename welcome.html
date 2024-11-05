@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Prediction - Welcome</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+    <div class="container welcome">
+        <h4>Real Estate price prediction</h4>
+        <p>Select your city to begin</p>
+
+        <input type="text" id="city-search" placeholder="Search city..." oninput="filterCities()">
+        <div id="city-list"></div>
+
+        <button onclick="goToDetailsPage()" class="next-button">Next</button>
+    </div>
+
+    <script src="cities.js"></script>
+    <script src="welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Prediction - Details</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading, please wait...</p>
+    </div>
+
+    <div class="container details">
+        <h2>Enter Property Details</h2>
+
+        <label for="bhk">Number of BHK:</label>
+        <select id="bhk" onchange="selectBHK()">
+            <option value="">Select BHK</option>
+            <option value="1">1 BHK</option>
+            <option value="2">2 BHK</option>
+            <option value="3">3 BHK</option>
+            <option value="4">4 BHK</option>
+        </select>
+
+        <label for="furnishing">Furnishing:</label>
+        <div class="furnishing-options">
+            <div class="furnishing-item" onclick="selectFurnishing('furnished', this)">
+                <img src="furnished.jpg" alt="Furnished">
+                <span class="furnishing-text">Furnished</span>
+            </div>
+            <div class="furnishing-item" onclick="selectFurnishing('unfurnished', this)">
+                <img src="unfurnished.jpg" alt="Unfurnished">
+                <span class="furnishing-text">Unfurnished</span>
+            </div>
+        </div>
+
+        <label for="property-type">Property Type:</label>
+        <select id="property-type" onchange="selectPropertyType()">
+            <option value="">Select Property Type</option>
+            <option value="apartment">Apartment</option>
+            <option value="villa">Villa</option>
+            <option value="independent-house">Independent House</option>
+            <option value="plot">Plot</option>
+        </select>
+
+        <button onclick="goToPredictionPage()">Predict Price</button>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+</html>
