@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="prediction.css">
 </head>
 <body>
-    <div class="full-screen-overlay"></div>
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Calculating the estimated price, please wait...</p>
+    </div>
+
     <div class="container result">
         <h2>Estimated Property Price</h2>
-        <div id="result" class="result-display"></div>
+        <div id="result" class="result-display">Price: $XXX,XXX</div>
+        <p class="suggestion">Based on current market trends, this property is <span id="suggestion-type">affordable</span>.</p>
         <button onclick="goBack()">Go Back</button>
     </div>
 

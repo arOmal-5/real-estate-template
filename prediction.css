@@ -1,81 +1,138 @@
 * {
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Updated font for readability */
 }
 
-body {
-    height: 100vh;
+html {
+    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('bg.jpg'); /* Background image related to real estate */
+    background-image: url('bg.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
+    opacity: 90%;
+    overflow: hidden;
+    padding: 0 1rem;
 }
 
-/* Full-screen overlay */
-.full-screen-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
-    z-index: 1; /* Ensure it sits behind the result container */
+body {
+    color: white;
+    height: 90vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
 
 .container.result {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    width: 100%; /* Use full width of the parent */
-    max-width: 400px; /* Maximum width for larger screens */
+    padding: 30px;
+    width: 90%;
+    font-size: 0.6rem;
+    max-width: 600px;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.8s ease-in-out;
-    z-index: 2; /* Ensure it sits above the overlay */
+    
+    background: rgba(255, 255, 255, 0.267);
+    opacity: 90%;
+    animation: slideIn 1s ease-in-out;
 }
 
 h2 {
-    font-size: 2em; /* Increased font size for better readability */
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 1.9em;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .result-display {
-    font-size: 1.5em; /* Font size for results */
-    color: #28a745; /* Green color for emphasis */
+    font-size: 1.5em;
+    color: #ffffff;
     margin: 20px 0;
-    transition: transform 0.5s ease; /* Animation for result display */
+    transition: transform 0.5s ease;
     opacity: 0;
-    animation: fadeInUp 0.5s forwards; /* Fade and slide up animation */
+    animation: fadeInUp 0.5s forwards;
+}
+.price {
+    color: #ffffff; /* Highlight color (green) */
+    font-weight: bold;
+    font-size: 2em;
+    
+}
+
+
+
+.suggestion {
+    font-size: 1.2em;
+    color: #ffffffc3;
+    margin-top: 10px;
+    font-style: italic;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #0001008c;
     color: white;
     border: none;
-    padding: 12px 24px; /* Adjusted padding for a larger button */
-    font-size: 1.1em; /* Increased font size */
+    padding: 12px 24px;
+    font-size: 1.1em;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%; /* Make button full width */
+    width: 100%;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #9a9a9ac3;
 }
 
 button:active {
-    transform: scale(0.95); /* Slightly more scaling effect when active */
+    transform: scale(0.98);
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #28a745;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinner p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+/* Fade-in and slide-up animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -86,14 +143,8 @@ button:active {
     }
 }
 
-/* Fade-in and slide up animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

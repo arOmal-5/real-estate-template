@@ -59,13 +59,29 @@ input[type="text"]:focus {
 }
 
 #city-list {
-    max-height: 150px;
-    overflow-y: scroll;
-    height: 2rem;
-    scrollbar-width: none;
+    max-height: 150px; /* Keeps the list at a fixed height */
+    overflow-y: auto; /* Enables scrolling when content overflows */
     margin-top: 10px;
     text-align: left;
-    transition: all 0.3s ease-in-out; /* Transition for list appearance */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Adds a subtle background */
+    scrollbar-width: thin; /* Firefox scrollbar width */
+    scrollbar-color: #ccc rgba(0, 0, 0, 0.1); /* Firefox scrollbar colors */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+#city-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#city-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#city-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .city-item {
@@ -73,12 +89,12 @@ input[type="text"]:focus {
     font-size: 1em;
     cursor: pointer;
     transition: background 0.2s ease-in-out;
-    overflow: hidden;
 }
 
 .city-item:hover {
     background-color: #f1f1f1;
 }
+
 
 .next-button {
     background-color: #0001008c;
