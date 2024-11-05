@@ -26,14 +26,16 @@
 
         <label for="furnishing">Furnishing:</label>
         <div class="furnishing-options">
-            <div class="furnishing-item" onclick="selectFurnishing('furnished', this)">
+            <label class="furnishing-item">
+                <input type="radio" name="furnishing" value="furnished" onclick="selectFurnishing('furnished')">
                 <img src="furnished.jpg" alt="Furnished">
                 <span class="furnishing-text">Furnished</span>
-            </div>
-            <div class="furnishing-item" onclick="selectFurnishing('unfurnished', this)">
+            </label>
+            <label class="furnishing-item">
+                <input type="radio" name="furnishing" value="unfurnished" onclick="selectFurnishing('unfurnished')">
                 <img src="unfurnished.jpg" alt="Unfurnished">
                 <span class="furnishing-text">Unfurnished</span>
-            </div>
+            </label>
         </div>
 
         <label for="property-type">Property Type:</label>
